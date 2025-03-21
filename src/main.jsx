@@ -6,6 +6,7 @@ import App from './App.jsx'
 import TopLayer from './components/TopLayer.jsx'
 import About from './components/About.jsx';
 import Store from './components/Store.jsx';
+import SingleView from './components/SingleView.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     children:[
       {index: true, element: <About />},
       {path: "store", element: <Store />},
+      {path: "single_view", element: <SingleView />},
     ],
   }
 ]);
