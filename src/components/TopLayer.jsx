@@ -94,6 +94,11 @@ function TopLayer() {
         }
     }
 
+    function handleSelectChange(event){
+        const value = event.target.value;
+        setCategory(value);
+    }
+
     const contextValue = {
         data,
         category,
@@ -101,6 +106,7 @@ function TopLayer() {
         selectedItem,
         handleQuantityChange,
         addToCartClick,
+        handleSelectChange,
     };
 
     return (
@@ -109,6 +115,7 @@ function TopLayer() {
             <div>
                 <div><Link to="/toplayer">About</Link></div>
                 <div><Link to="store">Store</Link></div>
+                <div><Link to="checkout">Checkout</Link></div>
             </div>
             <div>
                 <Outlet context={contextValue}/>
