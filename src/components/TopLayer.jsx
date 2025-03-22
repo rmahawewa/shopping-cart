@@ -2,13 +2,68 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
+import image_top from '../images/image_top.png';
+
+/* style start */
+const ContainerDiv = styled.div`
+    width:100%;
+    height:100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction:column;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+`;
+
+const TopImageDiv = styled.div`
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+    background-color:  #ffb975;
+    border-radius: 0.5rem;
+`;
+
+const NavigationBarDiv = styled.div`
+    position:sticky;
+    top:0;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: #ffb975;
+    padding: 1rem;
+    border-radius: 0.5rem;
+`;
+
+const FooterDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const OutletDiv = styled.div`
+    padding: 3rem;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+`;
+
+const HeadImage = styled.img`
+    padding-top: 0.5rem;
+`;
+
+/* style end */
 
 function TopLayer() {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [data, setData] = useState([]);
-    const [category, setCategory] = useState("women's clothing");   
+    const [category, setCategory] = useState("All");   
     const [selectedItem, setSelectedItem] = useState({});
 
     const navigate = useNavigate();
@@ -110,18 +165,33 @@ function TopLayer() {
     };
 
     return (
-        <div>
-            <div></div>
-            <div>
-                <div><Link to="/toplayer">About</Link></div>
-                <div><Link to="store">Store</Link></div>
-                <div><Link to="checkout">Checkout</Link></div>
-            </div>
-            <div>
+        <ContainerDiv>
+            <TopImageDiv>
+                <div><HeadImage src={image_top} /></div>
+            </TopImageDiv>
+            <NavigationBarDiv>
+                <div><StyledLink to="/toplayer"><label>About</label></StyledLink></div>
+                <div><StyledLink to="store">Store</StyledLink></div>
+                <div><StyledLink to="checkout">Checkout</StyledLink></div>
+            </NavigationBarDiv>
+            <OutletDiv>
                 <Outlet context={contextValue}/>
-            </div>
+            </OutletDiv>
+            <FooterDiv>
+                <div>
+                    <div>
+                        <h3>Subscribe to our news-letter</h3>
+                        <input type='text' placeholder='e-mail' /><button>Subscribe</button>
+                    </div>
+                    <div>
+                        <h3>Follow us</h3>
+                        
+                    </div>
+                </div>
+                <div></div>
+            </FooterDiv>
 
-        </div>
+        </ContainerDiv>
     );
 };
 

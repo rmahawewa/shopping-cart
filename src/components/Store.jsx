@@ -1,24 +1,52 @@
 import { useOutletContext } from "react-router-dom";
 import Card from "./Card";
+import React from 'react';
+import styled from 'styled-components';
+
+const StoreContainer = styled.div`
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+`;
+
+const CardContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+`;
+
+const SelectDiv = styled.div`
+    // display: flex;
+    // gap: 1rem;
+`;
+
+const Select = styled.select`
+    width: 10rem;
+    height: 3rem;
+    padding: 0.5rem;
+    font-size: medium;
+    background-color: #ffb975;
+    border: none;
+    border-radius: 0.5rem;
+`;
 
 function Store(){
     const { data, category, imageClick, handleQuantityChange, addToCartClick, handleSelectChange } = useOutletContext();
 
     return (
         <>  
-            <div className="store-container">
-                <div className="select">
-                    <label>Category</label>
-                    <select value={category} onChange={handleSelectChange}>
+            <StoreContainer>
+                <SelectDiv>
+                    <label>Category {' '}</label>
+                    <Select value={category} onChange={handleSelectChange}>
                         <option value="All">All</option>
                         <option value="men's clothing">Men's clothing</option>
                         <option value="women's clothing">Women's clothing</option>
                         <option value="electronics">Electronics</option>
                         <option value="jewelery">Jewellery</option>
-                    </select>
-                </div>
+                    </Select>
+                </SelectDiv>
                 {category.localeCompare("All") == 0 ? (
-                    <div className="card-container">
+                    <CardContainer>
                         {data && data.map((d) => (
                             <Card 
                                 key = {d.id}
@@ -33,9 +61,9 @@ function Store(){
                                 addToCartClick = {addToCartClick}
                             />
                         ))}
-                    </div>
+                    </CardContainer>
                     ) : (
-                    <div className="card-container">
+                    <CardContainer>
                         {data && data.map((d) => 
                             d.category.localeCompare(category) === 0 && (
                                 <Card 
@@ -52,9 +80,9 @@ function Store(){
                                 />
                             )
                         )}
-                    </div>
+                    </CardContainer>
                 )}
-            </div>
+            </StoreContainer>
             
         </>
 
