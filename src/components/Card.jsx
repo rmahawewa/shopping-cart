@@ -57,6 +57,10 @@ const AddToCartButton = styled.button`
     border-radius: 0.5rem;
     border: none;
     // background-color: blue;
+
+    &:hover {
+        border: 1px solid black;
+    }
 `;
 
 function Card({

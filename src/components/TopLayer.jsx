@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import image_top from '../images/image_top.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 /* style start */
 const ContainerDiv = styled.div`
@@ -40,6 +43,8 @@ const NavigationBarDiv = styled.div`
 const FooterDiv = styled.div`
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+    border-radius: 0.5rem;
 `;
 
 const OutletDiv = styled.div`
@@ -54,6 +59,63 @@ const StyledLink = styled(Link)`
 
 const HeadImage = styled.img`
     padding-top: 0.5rem;
+    border-radius: 0.5rem;
+`;
+
+const MoreInfoDiv = styled.div`
+    display: flex;
+    padding: 3rem;
+    gap: 10rem;
+    align-items: center;
+    justify-content: center;
+`;
+
+const MoreInfoInsideDiv = styled.div`
+    
+`;
+
+const EmailInput = styled.input`
+    width: 15rem;
+    height: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: medium;
+    margin-right: 0.5rem;
+`;
+
+const SubscribeButton = styled.button`
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: medium;
+    border: none;
+    background-color: #ffb975;
+
+    &:hover {
+        border: 1px solid black;
+    }
+`;
+
+const SocialMIcons = styled.div`
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+    height: 3rem;
+    width: 3rem;
+    align-items: center;
+`;
+
+const CopyrightDiv = styled.div`
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    font-size: small;
 `;
 
 /* style end */
@@ -178,17 +240,24 @@ function TopLayer() {
                 <Outlet context={contextValue}/>
             </OutletDiv>
             <FooterDiv>
-                <div>
-                    <div>
+                <MoreInfoDiv>
+                    <MoreInfoInsideDiv>
                         <h3>Subscribe to our news-letter</h3>
-                        <input type='text' placeholder='e-mail' /><button>Subscribe</button>
-                    </div>
-                    <div>
-                        <h3>Follow us</h3>
-                        
-                    </div>
-                </div>
-                <div></div>
+                        <EmailInput type='text' placeholder='e-mail' /><SubscribeButton>Subscribe</SubscribeButton>
+                    </MoreInfoInsideDiv>
+                    <MoreInfoInsideDiv>
+                        <h3>Follow us on</h3>
+                        <SocialMIcons>
+                            <Icon icon={faFacebook} />
+                            <Icon icon={faInstagram} />
+                            <Icon icon={faXTwitter} />
+                        </SocialMIcons>                        
+                    </MoreInfoInsideDiv>
+                </MoreInfoDiv>
+                <CopyrightDiv>
+                    <label>Developed by Ravini Mahawewa</label>
+                    <label>© Copyright 2025 Ravini Mahawewa. All rights researved.</label>
+                </CopyrightDiv>
             </FooterDiv>
 
         </ContainerDiv>
