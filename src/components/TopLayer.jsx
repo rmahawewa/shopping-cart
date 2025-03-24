@@ -253,9 +253,9 @@ function TopLayer() {
                 <div><HeadImage src={image_top} /></div>
             </TopImageDiv>
             <NavigationBarDiv>
-                <div><StyledLink to="/toplayer"><label>About</label></StyledLink></div>
-                <div><StyledLink to="store">Store</StyledLink></div>
-                <div><StyledLink to="checkout">Checkout</StyledLink></div>
+                <div><StyledLink to="/toplayer" name="about">About</StyledLink></div>
+                <div><StyledLink to="store" name="store">Store</StyledLink></div>
+                <div><StyledLink to="checkout" name="checkout">Checkout</StyledLink></div>
             </NavigationBarDiv>
             <OutletDiv>
                 <Outlet context={contextValue}/>

@@ -39,7 +39,7 @@ function App() {
     <>
       <ContainerDiv>
         <H3>Welcome to our Site!</H3>
-        <ExploreLink to="toplayer">Explore</ExploreLink>
+        <ExploreLink to="/toplayer" name="explore">Explore</ExploreLink>
       </ContainerDiv>
     </>
   );
