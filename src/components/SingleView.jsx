@@ -16,12 +16,19 @@ const CoverDiv = styled.div`
 
 const Image = styled.img`
     border-radius: 0.5rem;
+    @media (width <= 20em) {
+        width:9.5em;
+        height:relative;
+    }
 `;
 
 const DetailDiv = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    @media (width <= 20em) {
+        width:9.5em;
+    }
 `;
 
 const PriceDiv = styled.div`
@@ -40,8 +47,8 @@ const AddQuantity = styled.input`
 `;
 
 const AddToCartButton = styled.button`
-    width: 8rem;
-    height: 2.5rem;
+    width: 12rem;
+    height: 3rem;
     font-size: medium;
     font-weight: bold;
     padding: 0.5rem;
@@ -52,6 +59,10 @@ const AddToCartButton = styled.button`
     &:hover {
         border: 1px solid black;
     }
+
+    @media (width <= 20em) {
+        width: 9.5em;
+    }
 `;
 
 const InputsDiv = styled.div`
@@ -59,6 +70,9 @@ const InputsDiv = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    @media (width <= 20em) {
+        flex-direction: column;
+    }
 `;
 
 function SingleView(){

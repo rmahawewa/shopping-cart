@@ -2,19 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CardContainerDiv = styled.div`
-    padding: 2rem;
+    // padding: 0.5rem;
     display: flex;
+    @media (width <= 20em) {
+        flex-direction: column;
+    }
     gap: 4rem;
     background-color: #ffb975;
-    // border: 5px solid #ffb975;
     border-radius: 0.5rem;
+    @media (width >= 40em) {
+        width: 55rem;
+    }
+    
 `;
 
 const Image = styled.img`
-    width:15rem;
+    width:20rem;
     height:35rem;
     border-radius: 0.5rem;    
     border: 5px solid white;
+    @media (width <= 20em) {
+        width:relative;
+        height:relative;
+    }
 `;
 
 const DetailsDiv = styled.div`
@@ -28,10 +38,13 @@ const DetailsDiv = styled.div`
 
 const InsideDiv = styled.div`
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: left;
     text-align: left;
     padding: 1rem;
+    @media (width <= 20em) {
+        flex-direction: ${ ({quantity}) => ( quantity ? "column" : "row") };
+    }
 `;
 
 const LabelTitle = styled.label`
@@ -49,7 +62,7 @@ const AddQuantity = styled.input`
 `;
 
 const AddToCartButton = styled.button`
-    width: 8rem;
+    width: 12rem;
     height: 3rem;
     font-size: medium;
     font-weight: bold;
@@ -85,7 +98,7 @@ function Card({
             <DetailsDiv>
                 <InsideDiv>{title}</InsideDiv>
                 <InsideDiv><LabelTitle>Unit price: </LabelTitle><label>{price + ' lkr'}</label></InsideDiv>
-                <InsideDiv><LabelTitle>Quantity: </LabelTitle><AddQuantity type="number" value={quantity} onChange={(e) => handleQuantityChange(id, e)} /></InsideDiv>
+                <InsideDiv quantity="true"><LabelTitle>Quantity: </LabelTitle><AddQuantity type="number" value={quantity} onChange={(e) => handleQuantityChange(id, e)} /></InsideDiv>
                 <InsideDiv>
                     <AddToCartButton onClick={() => addToCartClick(id, addToCart ? "remove" : "add")}>{addToCart ? "Remove from cart" : "Add to cart"}</AddToCartButton>                    
                 </InsideDiv>

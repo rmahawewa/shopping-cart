@@ -17,6 +17,10 @@ const CardDiv = styled.div`
     gap: 4rem;
     background-color: #ffb975;
     border-radius: 0.5rem;
+    @media (width <= 20em) {
+        flex-direction: column;
+        
+    }
 `;
 
 const Image = styled.img`

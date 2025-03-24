@@ -4,8 +4,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StoreContainer = styled.div`
-    display:grid;
-    grid-template-columns: 1fr 3fr;
+    // display:grid;
+    // grid-template-columns: 1fr 3fr;
+    display: flex;
+    @media (width <= 20em) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+        gap: 3rem;
 `;
 
 const CardContainer = styled.div`

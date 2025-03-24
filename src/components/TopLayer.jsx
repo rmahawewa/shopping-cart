@@ -11,7 +11,7 @@ import { faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-sv
 
 /* style start */
 const ContainerDiv = styled.div`
-    width:100%;
+    width:75rem;
     height:100%;
     padding: 1rem;
     display: flex;
@@ -44,7 +44,7 @@ const FooterDiv = styled.div`
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem;    
 `;
 
 const OutletDiv = styled.div`
@@ -58,6 +58,9 @@ const StyledLink = styled(Link)`
 `;
 
 const HeadImage = styled.img`
+    @media (width <= 20em) {
+        width: 14em;       
+    }
     padding-top: 0.5rem;
     border-radius: 0.5rem;
 `;
@@ -66,21 +69,39 @@ const MoreInfoDiv = styled.div`
     display: flex;
     padding: 3rem;
     gap: 10rem;
+    @media (width <= 20em) {
+        gap: 5rem;
+    }
     align-items: center;
     justify-content: center;
+    @media (width <= 20em) {
+        flex-direction: column;
+        
+    }
 `;
 
 const MoreInfoInsideDiv = styled.div`
     
 `;
 
+const Inputs = styled.div`
+    display: flex;
+    gap:0.5rem;
+    @media (width <= 20em) {
+        flex-direction: column;
+    }
+`;
+
 const EmailInput = styled.input`
     width: 15rem;
     height: 2rem;
+    @media (width <= 20em) {
+        width: 10rem;
+    }
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: medium;
-    margin-right: 0.5rem;
+    
 `;
 
 const SubscribeButton = styled.button`
@@ -243,7 +264,7 @@ function TopLayer() {
                 <MoreInfoDiv>
                     <MoreInfoInsideDiv>
                         <h3>Subscribe to our news-letter</h3>
-                        <EmailInput type='text' placeholder='e-mail' /><SubscribeButton>Subscribe</SubscribeButton>
+                        <Inputs><EmailInput type='text' placeholder='e-mail' /><SubscribeButton>Subscribe</SubscribeButton></Inputs>
                     </MoreInfoInsideDiv>
                     <MoreInfoInsideDiv>
                         <h3>Follow us on</h3>
