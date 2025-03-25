@@ -92,7 +92,7 @@ function SingleView(){
                 <PriceDiv>
                     <div><label>Unit price: </label><label>{selectedItem.price} lkr</label></div>
                     <InputsDiv>
-                        <label>Quantity: </label><AddQuantity type="number" value={selectedItem.quantity} onChange={(e) => handleQuantityChange(selectedItem.id, e)} />
+                        <label>Quantity: </label><AddQuantity type="number" min="0" value={selectedItem.quantity} onChange={(e) => handleQuantityChange(selectedItem.id, e)} />
                         <AddToCartButton onClick={() => addToCartClick(selectedItem.id, selectedItem.addToCart ? "remove" : "add")}>{selectedItem.addToCart ? "Remove from cart" : "Add to cart"}</AddToCartButton>
                     </InputsDiv>
                 </PriceDiv>

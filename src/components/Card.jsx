@@ -98,7 +98,7 @@ function Card({
             <DetailsDiv>
                 <InsideDiv>{title}</InsideDiv>
                 <InsideDiv><LabelTitle>Unit price: </LabelTitle><label>{price + ' lkr'}</label></InsideDiv>
-                <InsideDiv quantity="true"><LabelTitle>Quantity: </LabelTitle><AddQuantity type="number" value={quantity} onChange={(e) => handleQuantityChange(id, e)} /></InsideDiv>
+                <InsideDiv quantity="true"><LabelTitle>Quantity: </LabelTitle><AddQuantity type="number" min="0" value={quantity} onChange={(e) => handleQuantityChange(id, e)} /></InsideDiv>
                 <InsideDiv>
                     <AddToCartButton onClick={() => addToCartClick(id, addToCart ? "remove" : "add")}>{addToCart ? "Remove from cart" : "Add to cart"}</AddToCartButton>                    
                 </InsideDiv>

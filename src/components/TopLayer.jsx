@@ -254,8 +254,8 @@ function TopLayer() {
             </TopImageDiv>
             <NavigationBarDiv>
                 <div><StyledLink to="/toplayer" name="about">About</StyledLink></div>
-                <div><StyledLink to="store" name="store">Store</StyledLink></div>
-                <div><StyledLink to="checkout" name="checkout">Checkout</StyledLink></div>
+                <div><StyledLink to="/toplayer/store" name="store">Store</StyledLink></div>
+                <div><StyledLink to="/toplayer/checkout" name="checkout">Checkout</StyledLink></div>
             </NavigationBarDiv>
             <OutletDiv>
                 <Outlet context={contextValue}/>
