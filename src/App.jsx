@@ -33,14 +33,24 @@ const ExploreLink = styled(Link)`
   padding: 0.5rem;
 `;
 
+const MainDiv = styled.div`
+    height:100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 function App() {
 
   return (
     <>
-      <ContainerDiv>
-        <H3>Welcome to our Site!</H3>
-        <ExploreLink to="/toplayer" name="explore">Explore</ExploreLink>
-      </ContainerDiv>
+      <MainDiv>
+        <ContainerDiv>
+          <H3>Welcome to our Site!</H3>
+          <ExploreLink to="/toplayer" name="explore">Explore</ExploreLink>
+        </ContainerDiv>
+      </MainDiv>      
     </>
   );
 }

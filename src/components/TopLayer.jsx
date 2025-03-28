@@ -139,6 +139,14 @@ const CopyrightDiv = styled.div`
     font-size: small;
 `;
 
+const MainDiv = styled.div`
+    height:100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 /* style end */
 
 function TopLayer() {
@@ -248,40 +256,43 @@ function TopLayer() {
     };
 
     return (
-        <ContainerDiv>
-            <TopImageDiv>
-                <div><HeadImage src={image_top} /></div>
-            </TopImageDiv>
-            <NavigationBarDiv>
-                <div><StyledLink to="/toplayer" name="about">About</StyledLink></div>
-                <div><StyledLink to="/toplayer/store" name="store">Store</StyledLink></div>
-                <div><StyledLink to="/toplayer/checkout" name="checkout">Checkout</StyledLink></div>
-            </NavigationBarDiv>
-            <OutletDiv>
-                <Outlet context={contextValue}/>
-            </OutletDiv>
-            <FooterDiv>
-                <MoreInfoDiv>
-                    <MoreInfoInsideDiv>
-                        <h3>Subscribe to our news-letter</h3>
-                        <Inputs><EmailInput type='text' placeholder='e-mail' /><SubscribeButton>Subscribe</SubscribeButton></Inputs>
-                    </MoreInfoInsideDiv>
-                    <MoreInfoInsideDiv>
-                        <h3>Follow us on</h3>
-                        <SocialMIcons>
-                            <Icon icon={faFacebook} />
-                            <Icon icon={faInstagram} />
-                            <Icon icon={faXTwitter} />
-                        </SocialMIcons>                        
-                    </MoreInfoInsideDiv>
-                </MoreInfoDiv>
-                <CopyrightDiv>
-                    <label>Developed by Ravini Mahawewa</label>
-                    <label>© Copyright 2025 Ravini Mahawewa. All rights researved.</label>
-                </CopyrightDiv>
-            </FooterDiv>
+        <MainDiv>
+            <ContainerDiv>
+                <TopImageDiv>
+                    <div><HeadImage src={image_top} /></div>
+                </TopImageDiv>
+                <NavigationBarDiv>
+                    <div><StyledLink to="/toplayer" name="about">About</StyledLink></div>
+                    <div><StyledLink to="/toplayer/store" name="store">Store</StyledLink></div>
+                    <div><StyledLink to="/toplayer/checkout" name="checkout">Checkout</StyledLink></div>
+                </NavigationBarDiv>
+                <OutletDiv>
+                    <Outlet context={contextValue}/>
+                </OutletDiv>
+                <FooterDiv>
+                    <MoreInfoDiv>
+                        <MoreInfoInsideDiv>
+                            <h3>Subscribe to our news-letter</h3>
+                            <Inputs><EmailInput type='text' placeholder='e-mail' /><SubscribeButton>Subscribe</SubscribeButton></Inputs>
+                        </MoreInfoInsideDiv>
+                        <MoreInfoInsideDiv>
+                            <h3>Follow us on</h3>
+                            <SocialMIcons>
+                                <Icon icon={faFacebook} />
+                                <Icon icon={faInstagram} />
+                                <Icon icon={faXTwitter} />
+                            </SocialMIcons>                        
+                        </MoreInfoInsideDiv>
+                    </MoreInfoDiv>
+                    <CopyrightDiv>
+                        <label>Developed by Ravini Mahawewa</label>
+                        <label>© Copyright 2025 Ravini Mahawewa. All rights researved.</label>
+                    </CopyrightDiv>
+                </FooterDiv>
 
-        </ContainerDiv>
+            </ContainerDiv>
+        </MainDiv>
+        
     );
 };
 
