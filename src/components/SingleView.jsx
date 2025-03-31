@@ -45,6 +45,18 @@ const DetailDiv = styled.div`
     }
 `;
 
+const DescriptionDiv = styled.div`
+    @media (width <= 20em) {
+        width:9.5em;
+    }
+    @media (max-width: 767px){ /* for phones */
+        width:14em;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        width:25em;
+    }
+`;
+
 const PriceDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -104,7 +116,7 @@ function SingleView(){
                 alt={selectedItem.title}
             />
             <DetailDiv>                
-                <div><label>{selectedItem.description}</label></div>
+                <DescriptionDiv><label>{selectedItem.description}</label></DescriptionDiv>
                 <div><label>Category: {selectedItem.category}</label></div>
                 <PriceDiv>
                     <div><label>Unit price: </label><label>{selectedItem.price} lkr</label></div>
