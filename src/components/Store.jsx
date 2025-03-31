@@ -11,6 +11,14 @@ const StoreContainer = styled.div`
         flex-direction: column;
         gap: 3rem;
     }
+    @media (max-width: 767px){ /* for phones */
+        flex-direction: column;
+        gap: 3rem;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        flex-direction: column;
+        gap: 3rem;
+    }
         gap: 3rem;
 `;
 

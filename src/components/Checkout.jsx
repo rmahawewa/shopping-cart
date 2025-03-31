@@ -32,11 +32,11 @@ const TotalPrice = styled.div`
 
 const Button = styled.button`
     height: 2rem;
-    padding: ${ ({checkout}) => ( checkout ? "0.5rem" : "0.5rem") };
+    padding: ${ ({$checkout}) => ( $checkout ? "0.5rem" : "0.5rem") };
     border: none;
     border-radius: 0.5rem;
-    font-size: ${ ({checkout}) => ( checkout ? "large" : "normal") };
-    font-weight: ${ ({checkout}) => ( checkout ? "bold" : "normal") };
+    font-size: ${ ({$checkout}) => ( $checkout ? "large" : "normal") };
+    font-weight: ${ ({$checkout}) => ( $checkout ? "bold" : "normal") };
 
     &:hover {
         border: 1px solid black;
@@ -65,7 +65,7 @@ function Checkout(){
                 </DetailDiv>
             ))}
             <TotalPrice><label>Total Price:</label><label>{' ' + total} lkr</label></TotalPrice>
-            <div><Button checkout="true">Checkout</Button></div>
+            <div><Button $checkout="true">Checkout</Button></div>
         </ContainerDiv>
     );
 

@@ -61,6 +61,12 @@ const HeadImage = styled.img`
     @media (width <= 20em) {
         width: 14em;       
     }
+    @media (max-width: 767px){ /* for phones */
+        width: 14em;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        width: 14em;
+    }
     padding-top: 0.5rem;
     border-radius: 0.5rem;
 `;
@@ -78,6 +84,14 @@ const MoreInfoDiv = styled.div`
         flex-direction: column;
         
     }
+    @media (max-width: 767px){ /* for phones */
+        flex-direction: column;
+        gap: 5rem;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        flex-direction: column;
+        gap: 5rem;
+    }
 `;
 
 const MoreInfoInsideDiv = styled.div`
@@ -90,12 +104,24 @@ const Inputs = styled.div`
     @media (width <= 20em) {
         flex-direction: column;
     }
+    @media (max-width: 767px){ /* for phones */
+        flex-direction: column;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        flex-direction: column;
+    }
 `;
 
 const EmailInput = styled.input`
     width: 15rem;
     height: 2rem;
     @media (width <= 20em) {
+        width: 10rem;
+    }
+    @media (max-width: 767px){ /* for phones */
+        width: 10rem;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
         width: 10rem;
     }
     padding: 0.5rem;

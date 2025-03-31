@@ -21,6 +21,12 @@ const CardDiv = styled.div`
         flex-direction: column;
         
     }
+    @media (max-width: 767px){ /* for phones */
+        flex-direction: column;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        flex-direction: column;
+    }
 `;
 
 const Image = styled.img`

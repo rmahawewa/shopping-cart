@@ -20,6 +20,14 @@ const Image = styled.img`
         width:9.5em;
         height:relative;
     }
+    @media (max-width: 767px){ /* for phones */
+        width:15em;
+        height:relative;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        width:30em;
+        height:relative;
+    }
 `;
 
 const DetailDiv = styled.div`
@@ -28,6 +36,12 @@ const DetailDiv = styled.div`
     gap: 3rem;
     @media (width <= 20em) {
         width:9.5em;
+    }
+    @media (max-width: 767px){ /* for phones */
+        width:14em;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
+        width:25em;
     }
 `;
 
@@ -71,6 +85,9 @@ const InputsDiv = styled.div`
     justify-content: center;
     gap: 0.5rem;
     @media (width <= 20em) {
+        flex-direction: column;
+    }
+    @media (max-width: 767px){ /* for phones */
         flex-direction: column;
     }
 `;
