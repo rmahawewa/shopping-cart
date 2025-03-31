@@ -46,6 +46,8 @@ const Select = styled.select`
 function Store(){
     const { data, category, imageClick, handleQuantityChange, addToCartClick, handleSelectChange } = useOutletContext();
 
+    const filteredData = data ? data.filter(d => d.id !== 20 ) : [];
+
     return (
         <>  
             <StoreContainer>
@@ -61,7 +63,7 @@ function Store(){
                 </SelectDiv>
                 {category.localeCompare("All") == 0 ? (
                     <CardContainer>
-                        {data && data.map((d) => (
+                        {filteredData && filteredData.map((d) => (
                             <Card 
                                 key = {d.id}
                                 id = {d.id}
@@ -78,7 +80,7 @@ function Store(){
                     </CardContainer>
                     ) : (
                     <CardContainer>
-                        {data && data.map((d) => 
+                        {filteredData && filteredData.map((d) => 
                             d.category.localeCompare(category) === 0 && (
                                 <Card 
                                     key = {d.id}
