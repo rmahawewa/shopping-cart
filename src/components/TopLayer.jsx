@@ -27,6 +27,8 @@ const TopImageDiv = styled.div`
     margin-bottom: 1rem;
     background-color:  #ffb975;
     border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
 `;
 
 const NavigationBarDiv = styled.div`
@@ -62,11 +64,12 @@ const HeadImage = styled.img`
         width: 14em;       
     }
     @media (max-width: 767px){ /* for phones */
-        width: 14em;
+        width: 25em;
     }
     @media (min-width: 768px) and (max-width: 1023px){ /* for tablets */
-        width: 14em;
+        width: 45em;
     }
+    width: 73em;
     padding-top: 0.5rem;
     border-radius: 0.5rem;
 `;
