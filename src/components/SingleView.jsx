@@ -116,7 +116,7 @@ function SingleView(){
                 alt={selectedItem.title}
             />
             <DetailDiv>                
-                <DescriptionDiv><label>{selectedItem.description}</label></DescriptionDiv>
+                <DescriptionDiv>{selectedItem.description}</DescriptionDiv>
                 <div><label>Category: {selectedItem.category}</label></div>
                 <PriceDiv>
                     <div><label>Unit price: </label><label>{selectedItem.price} lkr</label></div>
