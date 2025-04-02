@@ -71,7 +71,7 @@ function Checkout(){
                     <StyledHr/>
                 </DetailDiv>
             ))}
-            <TotalPrice><label>Total Price:</label><label>{' ' + total} lkr</label></TotalPrice>
+            <TotalPrice><label>Total Price:</label><label>{' ' + total.toFixed(2)} lkr</label></TotalPrice>
             <div><Button $checkout="true">Checkout</Button></div>
         </ContainerDiv>
     );
