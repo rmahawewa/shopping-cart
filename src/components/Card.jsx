@@ -23,9 +23,14 @@ const CardContainerDiv = styled.div`
     
 `;
 
-const Image = styled.img`
+const ImageDiv = styled.div`
     width:20rem;
     height:35rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
     border-radius: 0.5rem;    
     border: 5px solid white;
     @media (width <= 20em) {
@@ -40,6 +45,16 @@ const Image = styled.img`
         // width:relative;
         // height:relative;
     }
+`;
+
+const Image = styled.img`
+    max-width: 75%;
+    height: auto;
+    border-radius: 0.5rem;  
+`;
+
+const Label = styled.label`
+    width:20rem;
 `;
 
 const DetailsDiv = styled.div`
@@ -110,12 +125,15 @@ function Card({
 }){
     return (
         <CardContainerDiv key={id}>
-            <Image 
-                key={id}
-                src={image}
-                alt={title}                
-                onClick={() => imageClick(id)}                
-            />
+            <ImageDiv>
+                <Image 
+                    key={id}
+                    src={image}
+                    alt={title}                
+                    onClick={() => imageClick(id)}                
+                />
+                <Label></Label>
+            </ImageDiv>            
             <DetailsDiv>
                 <InsideDiv>{title}</InsideDiv>
                 <InsideDiv><LabelTitle>Unit price: </LabelTitle><label>{price + ' lkr'}</label></InsideDiv>

@@ -35,7 +35,7 @@ const NavigationBarDiv = styled.div`
     position:sticky;
     top:0;
     display: grid;
-    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     background-color: #ffb975;
     padding: 1rem;
@@ -57,6 +57,8 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     font-weight: bold;
     color: black;
+    text-align: right;
+    justify-self: end;
 `;
 
 const HeadImage = styled.img`
@@ -293,9 +295,9 @@ function TopLayer() {
                     <div><HeadImage src={image_top} /></div>
                 </TopImageDiv>
                 <NavigationBarDiv>
-                    <div><StyledLink to="/toplayer" name="about">About</StyledLink></div>
-                    <div><StyledLink to="/toplayer/store" name="store">Store</StyledLink></div>
-                    <div><StyledLink to="/toplayer/checkout" name="checkout">Checkout</StyledLink></div>
+                    <StyledLink to="/toplayer" name="about">About</StyledLink>
+                    <StyledLink to="/toplayer/store" name="store">Store</StyledLink>
+                    <StyledLink to="/toplayer/checkout" name="checkout">Checkout</StyledLink>
                 </NavigationBarDiv>
                 <OutletDiv>
                     <Outlet context={contextValue}/>
