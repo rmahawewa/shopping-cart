@@ -163,6 +163,8 @@ const CopyrightDiv = styled.div`
     background-color: black;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     padding: 1rem;
     font-size: small;

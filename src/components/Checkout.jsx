@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import React from 'react';
+import { useMemo } from "react";
 import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
@@ -49,9 +50,15 @@ function Checkout(){
 
     const filteredData = data ? data.filter(d => d.quantity > 0 && d.addToCart) : [];
 
-    const total = filteredData.reduce((accumulator, d) => {
-        return accumulator + (d.quantity * d.price);
-    }, 0);
+    const total = useMemo(() => {
+        return filteredData.reduce(
+            (accumulator, d) => accumulator + (d.quantity * d.price), 0
+        );
+    }, [filteredData]);
+
+    // const total = filteredData.reduce((accumulator, d) => {
+    //     return accumulator + (d.quantity * d.price);
+    // }, 0);
 
     return (
         <ContainerDiv>
