@@ -182,6 +182,13 @@ const MainDiv = styled.div`
 
 /* style end */
 
+/**
+ * 
+ * This component fetch data from "https://fakestoreapi.com/products" API via a useEffect hook. Fetched data are stored in a state called data. 
+ * Page contains a dropdown to select the shopping item category. User can select the category and the it will be stored in the category state.
+ * This page has links to about, store and checkout pages.
+ */
+
 function TopLayer() {
 
     const [loading, setLoading] = useState(true);
@@ -228,6 +235,10 @@ function TopLayer() {
         fetchData();
     }, []);
 
+    /**
+     * User will be navigated to the "single_view" page when the image of a shopping list item is clicked.
+     */
+
     function imageClick(id){
         console.log(id);
         const entity = data.find(d => d.id === id);
@@ -237,6 +248,9 @@ function TopLayer() {
         }
     }
 
+    /**
+     * The quantity entry in the data state will change according to the user preffred quantity
+     */
     function handleQuantityChange(id, event){
         const dataArray = [...data];
         const entity = dataArray.find(
@@ -254,6 +268,9 @@ function TopLayer() {
         }
     }
 
+    /**
+     * The addToCart entry in the data state will change according to the user's choice
+     */
     function addToCartClick(id, task){
         const dataArray = [...data];
         const entity = dataArray.find(
@@ -273,6 +290,9 @@ function TopLayer() {
         }
     }
 
+    /**
+     * This function gets the user selected item category and store it in the category state 
+     */
     function handleSelectChange(event){
         const value = event.target.value;
         setCategory(value);

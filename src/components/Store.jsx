@@ -43,17 +43,21 @@ const Select = styled.select`
     border-radius: 0.5rem;
 `;
 
+/**
+ * This function retreive data from TopLayer component via useOutletContext hook and display the store item data accordingly via the Card component
+ */
+
 function Store(){
     const { data, category, imageClick, handleQuantityChange, addToCartClick, handleSelectChange } = useOutletContext();
 
-    const filteredData = data ? data.filter(d => d.id !== 20 ) : [];
+    const filteredData = data ? data.filter(d => d.id !== 20 ) : []; //Since this item is not compatible with styles is removed from the array.
 
     return (
         <>  
             <StoreContainer>
                 <SelectDiv>
                     <label>Category {' '}</label>
-                    <Select value={category} onChange={handleSelectChange}>
+                    <Select value={category} onChange={handleSelectChange}>        
                         <option value="All">All</option>
                         <option value="men's clothing">Men's clothing</option>
                         <option value="women's clothing">Women's clothing</option>

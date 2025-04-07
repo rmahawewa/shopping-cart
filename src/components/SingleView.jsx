@@ -104,6 +104,11 @@ const InputsDiv = styled.div`
     }
 `;
 
+/**
+ * This component is to individually view a shopping item. 
+ * This component further displays a description about the item.
+ */
+
 function SingleView(){
     const { selectedItem, handleQuantityChange, addToCartClick } = useOutletContext();
 

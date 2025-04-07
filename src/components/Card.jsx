@@ -112,6 +112,12 @@ const AddToCartButton = styled.button`
     }
 `;
 
+/**
+ * This function retreive data from the parent function Store via props. Individual shopping item details are displayed. 
+ * AddQuantity element gets the item quantity from the user.
+ * AddToCartButton element add or remove a cart item.
+ */
+
 function Card({
     id,
     title,

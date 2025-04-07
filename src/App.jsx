@@ -41,6 +41,11 @@ const MainDiv = styled.div`
     align-items: center;
 `;
 
+/**
+ * 
+ * App is the default antry page for the web site. App contains a Link to "/toplayer" from which can be visited to toplayer page
+ */
+
 function App() {
 
   return (

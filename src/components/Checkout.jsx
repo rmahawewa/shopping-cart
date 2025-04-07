@@ -44,6 +44,14 @@ const Button = styled.button`
     }
 `;
 
+/**
+ * This component initially retreive the data state array from TopLayer component via useOutletContext hook.
+ * Then it filters rows where there is a quantity and addToCart is set to true. The filtered data is listed to the end user using map function.
+ * In order to find the total price the filtered data array is sent through a reduce function where the product of the quantity and price in each 
+ * row is adds up to the accumulator with the initial value of 0
+ * The useMemo hook is used in reduce in order to only render when the filteredData is changed.
+ */
+
 
 function Checkout(){
     const { data, addToCartClick } = useOutletContext();
@@ -56,9 +64,6 @@ function Checkout(){
         );
     }, [filteredData]);
 
-    // const total = filteredData.reduce((accumulator, d) => {
-    //     return accumulator + (d.quantity * d.price);
-    // }, 0);
 
     return (
         <ContainerDiv>

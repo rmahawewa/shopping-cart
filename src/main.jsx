@@ -9,6 +9,10 @@ import Store from './components/Store.jsx';
 import SingleView from './components/SingleView.jsx';
 import Checkout from './components/Checkout.jsx';
 
+/**
+ * This code create routes. App element is the default route. TopLayer element has 4 child routes by names About, Store, SingleView, Checkout
+ */
+
 const router = createBrowserRouter([
   {
     path: "/",
