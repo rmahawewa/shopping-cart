@@ -277,10 +277,10 @@ function TopLayer() {
             d => d.id === id
         );
         if(entity){
-            if(task.localeCompare("add") === 0){
+            if(task === true){
                 entity.addToCart = true;
             }
-            if(task.localeCompare("remove") === 0){
+            if(task === false){
                 entity.addToCart = false;
             }
             

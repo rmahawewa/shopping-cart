@@ -72,7 +72,7 @@ function Checkout(){
                     <div><label>Item</label><label>{' ' + d.title}</label></div>
                     <div><label>Quantity:</label><label>{' ' + d.quantity}</label></div>
                     <div><label>Price:</label><label>{' ' + d.quantity * d.price} lkr</label></div>
-                    <div><Button onClick={() => addToCartClick(d.id, "remove")}>Remove</Button></div>
+                    <div><Button onClick={() => addToCartClick(d.id, false)}>Remove</Button></div>
                     <StyledHr/>
                 </DetailDiv>
             ))}
